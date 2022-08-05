@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | Calculator app</title>
+</head>
+
+<body>
+  <main class="calc-container">
+    <div class="container">
+      <header class="header">
+        <h1>calc</h1>
+        <div class="theme">
+          <h2>theme</h2>
+          <div class="switch">
+            <div class="theme-name">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="inputs">
+              <input class="check-1" type="checkbox" id="theme-1">
+              <input class="check-2" type="checkbox" id="theme-2">
+              <input class="check-3" type="checkbox" id="theme-3">
+              <label for="theme-1">
+              </label>
+              <label for="theme-2">
+              </label>
+              <label for="theme-3">
+              </label>
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="screen" id="screen"></div>
+      <span class="back-screen" id="back-screen"></span>
+      <div class="keypad" id="keypad">
+        <div class="btn number">7</div>
+        <div class="btn number">8</div>
+        <div class="btn number">9</div>
+        <div class="btn action del">del</div>
+        <div class="btn number">4</div>
+        <div class="btn number">5</div>
+        <div class="btn number">6</div>
+        <div class="btn math-action sum">+</div>
+        <div class="btn number">1</div>
+        <div class="btn number">2</div>
+        <div class="btn number">3</div>
+        <div class="btn math-action substrac">-</div>
+        <div class="btn number point">.</div>
+        <div class="btn number">0</div>
+        <div class="btn math-action divide">/</div>
+        <div class="btn math-action multiply">x</div>
+        <div class="btn action reset">reset</div>
+        <div class="btn action result">=</div>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Oliver Tejeda</a>.
+  </footer>
+  <script src="./js/main.js" type="module"></script>
+</body>
+
+</html>

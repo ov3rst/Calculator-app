@@ -1,0 +1,413 @@
+:root {
+  /* Colors */
+  --White: hsl(0, 0%, 100%);
+
+  /** Theme 1 **/
+  --main-bg: hsl(222, 26%, 31%); /*(main background)*/
+
+  /*(toggle background, keypad background)*/
+  --toggle-keypad-bg-1: hsl(223, 31%, 20%);
+  --screen-bg-1: hsl(224, 36%, 15%); /*(screen background)*/
+
+  /* Keys */
+  --action-key-bg-1: hsl(225, 21%, 49%); /*(key background)*/
+  --action-key-shadow-1: hsl(224, 28%, 35%); /*(key shadow)*/
+
+  --result-key-bg-1: hsl(6, 63%, 50%); /*(key background, toggle)*/
+  --result-key-shadow-1: hsl(6, 70%, 34%); /*(key shadow)*/
+
+  --number-key-bg-1: hsl(30, 25%, 89%); /*(key background)*/
+  --number-key-shadow-1: hsl(28, 16%, 65%); /*(key shadow)*/
+
+  /* text */
+  --number-text-color-1: hsl(221, 14%, 31%);
+
+  /** Theme 2 **/
+
+  --main-bg-2: hsl(0, 0%, 90%); /*(main background)*/
+
+  /* (toggle background, keypad background) */
+  --toggle-keypad-bg-2: hsl(0, 5%, 81%);
+  --screen-bg-2: hsl(0, 0%, 93%); /*(screen background)*/
+
+  /* Keys */
+  --action-key-bg-2: hsl(185, 42%, 37%); /*(key background)*/
+  --action-key-shadow-2: hsl(185, 58%, 25%); /*(key shadow)*/
+
+  --result-key-bg-2: hsl(25, 98%, 40%); /*(key background, toggle)*/
+  --result-key-shadow-2: hsl(25, 99%, 27%); /*(key shadow)*/
+
+  --number-key-bg-2: hsl(45, 7%, 89%); /*(key background)*/
+  --number-key-shadow-2: hsl(35, 11%, 61%); /*(key shadow)*/
+
+  /* Text */
+  --number-text-color-2: hsl(60, 10%, 19%);
+
+  /** Theme 3**/
+
+  --main-bg-3: hsl(268, 75%, 9%); /*(main background)*/
+
+  /* (toggle background, keypad background, screen background) */
+  --toggle-keypad-bg-3: hsl(268, 71%, 12%);
+
+  /* Keys */
+
+  --action-key-bg-3: hsl(281, 89%, 26%); /*(key background)*/
+  --action-key-shadow-3: hsl(285, 91%, 52%); /*(key shadow)*/
+
+  --result-key-bg-3: hsl(176, 100%, 44%); /*(key background, toggle)*/
+  --result-key-shadow-3: hsl(177, 92%, 70%); /*(key shadow)*/
+
+  --number-key-bg-3: hsl(268, 47%, 21%); /*(key background)*/
+  --number-key-shadow-3: hsl(290, 70%, 36%); /*(key shadow)*/
+
+  /* Text */
+
+  --number-text-color-3: hsl(52, 100%, 62%);
+  --result-color-3: hsl(198, 20%, 13%);
+}
+
+/** Reset **/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "League Spartan", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--White);
+}
+
+.container {
+  position: relative;
+  max-width: 328px;
+  margin: 3rem auto 0;
+}
+
+/** Reset **/
+
+/** Page Styles **/
+
+/** Theme 1**/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme {
+  display: flex;
+  gap: 2rem;
+}
+
+.theme h2 {
+  font-size: 0.8rem;
+  align-self: flex-end;
+  text-transform: uppercase;
+  padding-bottom: 0.2rem;
+}
+
+.theme .theme-name {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-left: 0.65rem;
+}
+
+.theme .theme-name {
+  font-size: 0.8rem;
+}
+
+.switch > .inputs {
+  position: relative;
+  margin-top: 0.3rem;
+  width: 64px;
+  height: 1.5rem;
+  background-color: var(--toggle-keypad-bg-1);
+  border-radius: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.switch .circle {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--result-key-bg-1);
+  border-radius: 50%;
+  left: 0.3rem;
+  transition: transform 0.3s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.check-2:checked ~ .circle,
+body.theme-2 .circle {
+  transform: translate(19.5px);
+}
+
+.check-3:checked ~ .circle,
+body.theme-3 .circle {
+  transform: translate(39px);
+}
+
+.switch > .inputs > label {
+  display: inline-block;
+  background-color: var(--action-key-shadow-3);
+  width: 1rem;
+  height: 1rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.switch > .inputs > label:hover + input:checked .circle {
+  background-color: var(--White);
+}
+
+.switch .inputs input {
+  display: none;
+}
+
+.screen {
+  align-items: center;
+  background-color: var(--screen-bg-1);
+  border-radius: 0.5rem;
+  display: flex;
+  font-size: 2rem;
+  height: 5.5rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  overflow-x: hidden;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  position: relative;
+  width: 100%;
+}
+
+.back-screen {
+  position: absolute;
+  top: 6rem;
+  right: 2rem;
+  font-size: small;
+}
+
+.keypad {
+  background-color: var(--toggle-keypad-bg-1);
+  border-radius: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+}
+
+.btn {
+  align-items: center;
+  background-color: var(--number-key-bg-1);
+  border-bottom: 4px solid var(--number-key-shadow-1);
+  border-radius: 0.35rem;
+  color: var(--number-text-color-1);
+  display: flex;
+  font-size: 2rem;
+  height: 3.7rem;
+  justify-content: center;
+  padding-top: 0.55rem;
+  text-transform: uppercase;
+  width: 3.7rem;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.reset,
+.result {
+  flex-grow: 1;
+}
+
+.reset,
+.del {
+  background-color: var(--action-key-bg-1);
+  border-color: var(--action-key-shadow-1);
+  color: var(--White) !important;
+}
+
+.result {
+  background-color: var(--result-key-bg-1);
+  border-color: var(--result-key-shadow-1);
+  color: var(--White) !important;
+}
+
+.reset,
+.result,
+.del,
+.multiply {
+  font-size: 1.25rem;
+}
+
+/** Theme 1**/
+
+/** Theme 2**/
+body.theme-2 {
+  background-color: var(--main-bg-2);
+  color: var(--number-text-color-2);
+}
+
+body.theme-2 .inputs,
+body.theme-2 .keypad {
+  background-color: var(--toggle-keypad-bg-2);
+}
+
+body.theme-2 .screen {
+  background-color: var(--screen-bg-2);
+}
+
+body.theme-2 .btn {
+  background-color: var(--number-key-bg-2);
+  color: inherit;
+}
+
+body.theme-2 .circle,
+body.theme-2 .result {
+  background-color: var(--result-key-bg-2);
+  border-color: var(--result-key-shadow-2);
+}
+
+body.theme-2 .del,
+body.theme-2 .reset {
+  background-color: var(--action-key-bg-2);
+  border-color: var(--action-key-shadow-2);
+}
+
+/** Theme 2**/
+
+/** Theme 3**/
+body.theme-3 {
+  background-color: var(--main-bg-3);
+  color: var(--number-text-color-3);
+}
+
+body.theme-3 .inputs,
+body.theme-3 .keypad,
+body.theme-3 .screen {
+  background-color: var(--toggle-keypad-bg-3);
+}
+
+body.theme-3 .btn {
+  background-color: var(--number-key-bg-3);
+  border-color: var(--number-key-shadow-3);
+  color: inherit;
+}
+
+body.theme-3 .circle,
+body.theme-3 .result {
+  background-color: var(--result-key-bg-3);
+  border-color: var(--result-key-shadow-3);
+  color: var(--result-color-3) !important;
+}
+
+body.theme-3 .del,
+body.theme-3 .reset {
+  background-color: var(--action-key-bg-3);
+  border-color: var(--action-key-shadow-3);
+}
+/** Theme 3**/
+
+/** Page Styles **/
+.attribution {
+  margin-top: 1rem;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--result-key-bg-1);
+}
+
+body.theme-2 .attribution a {
+  color: var(--result-key-bg-2);
+}
+
+body.theme-3 .attribution a {
+  color: var(--result-key-bg-3);
+}
+
+/** MediaQueries **/
+@media (hover: hover) {
+  .circle:hover {
+    background-color: rgb(217, 112, 101);
+    cursor: pointer;
+  }
+
+  .btn:hover {
+    background-color: var(--White);
+    cursor: pointer;
+  }
+
+  .del:hover,
+  .reset:hover {
+    background-color: hsl(224, 20%, 74%);
+  }
+
+  .result:hover {
+    background-color: rgb(217, 112, 101);
+  }
+
+  body.theme-2 .btn:hover {
+    background-color: var(--White);
+  }
+
+  body.theme-2 .circle:hover,
+  body.theme-2 .result:hover {
+    background-color: hsl(25, 67%, 57%);
+  }
+
+  body.theme-2 .del:hover,
+  body.theme-2 .reset:hover {
+    background-color: hsl(188, 44%, 59%);
+  }
+
+  body.theme-3 .btn:hover {
+    background-color: hsl(268, 40%, 42%);
+  }
+
+  body.theme-3 .circle:hover,
+  body.theme-3 .result:hover {
+    background-color: hsl(176, 75%, 72%);
+  }
+
+  body.theme-3 .del:hover,
+  body.theme-3 .reset:hover {
+    background-color: hsl(281, 47%, 45%);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 425px;
+    margin: 5rem auto 0;
+  }
+
+  .screen {
+    height: 7rem;
+  }
+
+  .keypad {
+    gap: 1.1rem;
+  }
+
+  .btn {
+    border-radius: 0.6rem;
+    width: 5rem;
+    height: 3.4rem;
+  }
+}
