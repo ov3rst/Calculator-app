@@ -97,14 +97,12 @@ const calculator = () => {
   });
 
   d.addEventListener("keyup", (e) => {
-    console.log(e.target);
     if (/^[\d\.]$/.test(e.key)) numberPress(e.key);
 
     if (e.key === "Backspace") deleted();
 
-    if (/^[\+\-x\/]$/.test(e.key) && $screen.textContent !== "") {
-      console.log("entre");
-      mathAction($screen.textContent);
+    if (/^[\+\-x\/]$/.test(e.key)) {
+      mathAction(e.key);
     }
 
     if (e.key === "Enter") results();
